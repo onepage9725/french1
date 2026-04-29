@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrute Maroc - Accueil</title>
+    <meta name="description" content="L'analyse de données en toute simplicité – jusqu'à MAD15,000 /Semaine">
+    <link rel="icon" href="image/RecruteMaroc.png" type="image/png">
+    <meta property="og:image" content="image/RecruteMaroc.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(135deg, #eef2f6 0%, #e9f2e9 50%, #f4f8fb 100%);
+        }
+        .floating-card {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .delay-1 { animation-delay: 1s; }
+        .delay-2 { animation-delay: 2s; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white">
+
+    <!-- Navbar -->
+    <header class="container mx-auto px-6 py-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="image/recrutemaroc-nbg.png" alt="Recrute Maroc" class="h-10">
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
+            <a href="#accueil" class="hover:text-[#08265c] font-bold text-[#08265c] transition-colors">Accueil</a>
+            <a href="#apropos" class="hover:text-[#08265c] transition-colors">À propos</a>
+            <a href="#offres" class="hover:text-[#08265c] transition-colors">Offres d'emploi</a>
+            <a href="#fonctionnalites" class="hover:text-[#08265c] transition-colors">Fonctionnalités</a>
+            <a href="#contact" class="hover:text-[#08265c] transition-colors">Contact</a>
+            <a href="#temoignages" class="hover:text-[#08265c] transition-colors">Témoignages</a>
+        </nav>
+
+                <!-- Burger Icon -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-[#08265c] focus:outline-none z-50 relative">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#inscription" class="hidden md:inline-block bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-md shadow-green-200">
+            Postuler maintenant
+        </a>
+        </header>
+
+    <!-- Mobile Nav Panel -->
+    <div id="mobile-nav" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col pt-24 px-8 pb-8 shadow-2xl">
+        <nav class="flex flex-col gap-6 text-xl font-bold text-gray-800">
+            <a href="#accueil" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Accueil</a>
+            <a href="#apropos" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">À propos</a>
+            <a href="#offres" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Offres d'emploi</a>
+            <a href="#fonctionnalites" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Fonctionnalités</a>
+            <a href="#contact" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Contact</a>
+            <a href="#temoignages" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Témoignages</a>
+        </nav>
+        <div class="mt-auto">
+            <a href="#inscription" class="mobile-link block text-center bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-green-200">
+                Postuler maintenant
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <main id="accueil" class="container mx-auto px-4 pt-10 pb-12 -mt-10">
+        <div class="hero-bg rounded-[40px] px-8 md:px-16 pt-16 pb-8 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
+            
+            <!-- Left Content -->
+            <div class="lg:w-1/2 relative z-20 flex flex-col items-start lg:items-start pt-8 pb-16">
+                <p class="text-[#08265c] font-bold text-sm tracking-wider uppercase mb-6">
+                    Bienvenue chez Recrute Maroc
+                </p>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-[#1f2937] leading-[1.1] mb-6">
+                    L'analyse de données en toute simplicité – jusqu'à MAD15,000 /Semaine
+                </h1>
+                <p class="text-gray-600 text-lg mb-10 max-w-lg">
+                    Profitez d'un travail flexible et d'emplois en ligne quotidiens depuis le confort de votre maison.
+                </p>
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                    Postuler maintenant
+                </a>
+            </div>
+
+            <!-- Right Content (Image & Floating Cards) -->
+            <div class="lg:w-1/2 relative h-[500px] lg:h-[600px] w-full flex justify-center items-end">
+                <!-- Main Image (Placeholder for the lady with laptop) -->
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Femme avec un ordinateur portable" class="object-cover w-full h-full lg:h-full z-0 rounded-b-[40px] lg:rounded-[40px] mask-image-bottom mix-blend-multiply opacity-90" style="mask-image: linear-gradient(to top, transparent, black 10%); -webkit-mask-image: linear-gradient(to top, transparent, black 10%);">
+
+                <!-- Top Right Card -->
+                <div class="floating-card absolute top-10 right-4 lg:right-12 bg-white rounded-3xl p-6 flex flex-col items-center gap-2 z-20 w-48">
+                    <div class="w-12 h-12 bg-[#3f8a3e] rounded-full flex items-center justify-center text-white mb-1 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                    <div class="text-[#08265c] font-bold text-2xl">2,638+</div>
+                    <div class="text-gray-500 text-xs font-semibold text-center">Offres d'emploi</div>
+                </div>
+
+                <!-- Left Middle Card -->
+                <div class="floating-card delay-1 absolute top-1/2 left-0 lg:left-4 transform -translate-y-1/2 bg-white rounded-3xl p-6 flex flex-col items-start gap-1 z-20 w-44">
+                    <div class="text-[#08265c] font-bold text-3xl">1,618+</div>
+                    <div class="text-gray-500 text-sm font-semibold">Demandeurs d'emploi</div>
+                </div>
+
+                <!-- Bottom Right Card -->
+                <div class="floating-card delay-2 absolute bottom-24 right-0 lg:-right-8 bg-white rounded-3xl p-6 flex flex-col gap-3 z-20 shadow-xl border border-gray-50 w-56">
+                    <div class="flex -space-x-3">
+                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Avatar">
+                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Avatar">
+                        <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Avatar">
+                    </div>
+                    <div class="text-gray-700 text-sm font-bold leading-tight">
+                        Approuvé par plus de<br>2 106 clients
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- About Us Section -->
+    <section id="apropos" class="container mx-auto px-4 pt-16 pb-8 mb-12 -mt-8">
+        <div class="relative w-full rounded-[40px] overflow-hidden bg-gray-200 h-[600px] shadow-lg">
+            <!-- Main Background Image -->
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Équipe au bureau" class="absolute inset-0 w-full h-full object-cover">
+            
+            <!-- Top Right Image Overlay with thick white border illusion -->
+            <div class="absolute top-0 right-0 bg-white p-6 rounded-bl-[60px] hidden lg:block z-10 w-[450px] h-[450px]">
+                <div class="w-full h-full rounded-[30px] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Travailler ensemble" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Bottom Gradient and Text Content -->
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#08265c] via-[#08265c]/85 to-transparent pt-40 pb-12 px-8 lg:px-16 z-20">
+                <div class="flex flex-col md:flex-row gap-8 justify-between items-end">
+                    <div class="md:w-1/2">
+                        <p class="text-white/80 font-bold text-xs md:text-sm tracking-wider uppercase mb-3 text-shadow-sm">À propos de nous</p>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                            Recrute Maroc : Votre Partenaire Pour Les Opportunités En Ligne
+                        </h2>
+                    </div>
+                    <div class="md:w-1/2 lg:pl-12 text-white/90 text-sm md:text-base leading-relaxed pb-2">
+                        <p>
+                            Chez Recrute Maroc, nous vous connectons à des offres d'emploi flexibles, adaptées à vos compétences et à vos objectifs. Que ce soit à temps partiel, à temps plein ou pour un nouveau départ, nous vous aidons à évoluer dans le domaine du travail à distance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="fonctionnalites" class="container mx-auto px-4 pt-20 pb-16 mb-12 -mt-4">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-stretch">
+            <!-- Left Side: Text and Button -->
+            <div class="lg:w-[40%] flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+                <p class="text-[#08265c] font-bold text-sm tracking-widest uppercase mb-4">
+                    Pourquoi nous nous démarquons
+                </p>
+                <h2 class="text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-[#1f2937] leading-[1.1] mb-8">
+                    Les avantages d'une collaboration avec nous
+                </h2>
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 inline-block">
+                    Postuler maintenant
+                </a>
+            </div>
+
+            <!-- Right Side: Cards -->
+            <div class="lg:w-[60%] grid md:grid-cols-2 gap-6 w-full">
+                <!-- Card 1 -->
+                <div class="bg-white border-2 border-gray-100 rounded-[2rem] p-10 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-[#08265c] w-14 h-14 mb-6">
+                        <!-- Clock SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-[#1f2937] mb-4">Horaires de travail flexibles</h3>
+                    <p class="text-gray-500 mb-8 leading-relaxed font-medium">
+                        Des horaires adaptables qui correspondent à votre style de vie et vous offrent un bon équilibre.
+                    </p>
+                    <a href="#" class="text-[#08265c] font-bold mt-auto inline-flex items-center gap-1 hover:underline">
+                        En savoir plus 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" /></svg>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border-2 border-gray-100 rounded-[2rem] p-10 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-[#08265c] w-14 h-14 mb-6">
+                        <!-- Wallet SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-[#1f2937] mb-4">Récompensez vos efforts</h3>
+                    <p class="text-gray-500 mb-8 leading-relaxed font-medium">
+                        Obtenez de la reconnaissance et une rémunération équitable pour chaque tâche accomplie.
+                    </p>
+                    <a href="#" class="text-[#08265c] font-bold mt-auto inline-flex items-center gap-1 hover:underline">
+                        En savoir plus 
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section id="contact" class="container mx-auto px-4 pt-20 pb-8 mb-16 -mt-12">
+        <div class="hero-bg rounded-[40px] px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            
+            <!-- Left Side Image -->
+            <div class="w-full md:w-5/12 flex justify-center items-end self-stretch pt-12 md:pt-0">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Personne travaillant sur un ordinateur portable" class="object-cover h-[300px] md:h-[400px] lg:h-[480px] mix-blend-multiply opacity-90 pb-0 mb-0 self-end" style="mask-image: linear-gradient(to top, black 80%, black 100%); -webkit-mask-image: linear-gradient(to top, black 80%, black 100%);">
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="w-full md:w-7/12 py-12 md:py-20 lg:py-24 flex flex-col items-start z-10">
+                <p class="text-[#08265c] font-bold text-sm tracking-wider uppercase mb-5">
+                    Contactez-nous
+                </p>
+                <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#1f2937] leading-[1.1] mb-6">
+                    Votre prochain chapitre commence ici !
+                </h2>
+                <p class="text-gray-600 text-lg mb-10 max-w-lg">
+                    Découvrez des emplois flexibles et prenez le contrôle de votre parcours professionnel.
+                </p>
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                    Rejoignez notre équipe dès maintenant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section id="offres" class="container mx-auto px-4 pt-20 pb-16 mb-12 -mt-4">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <!-- Left Side -->
+            <div class="lg:w-1/2 flex flex-col items-start text-left lg:pr-4">
+                <p class="text-[#08265c] font-bold text-sm tracking-wider uppercase mb-4">
+                    Offres d'emploi
+                </p>
+                <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-[#1f2937] leading-[1.15] mb-6">
+                    Travaillez de n'importe où – à temps partiel ou à temps plein
+                </h2>
+                <p class="text-gray-500 text-lg mb-8 leading-relaxed">
+                    Accédez à des opportunités d'emploi flexibles qui s'adaptent à votre emploi du temps. Tout ce dont vous avez besoin, c'est de motivation et d'une connexion Internet fiable.
+                </p>
+
+                <!-- Features Box -->
+                <div class="bg-[#eef2f6] rounded-[2rem] p-8 md:p-10 w-full mb-8">
+                    <ul class="flex flex-col gap-5">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 text-[#08265c] shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-600 text-[15px]">Emplois en ligne quotidiens – gagnez jusqu'à MAD3000</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 text-[#08265c] shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-600 text-[15px]">Travaillez de manière flexible 1 à 5 heures par jour, quand vous le souhaitez.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 text-[#08265c] shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-600 text-[15px]">Les emplois comprennent des sondages, des évaluations de produits et de légères recherches.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 text-[#08265c] shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-600 text-[15px]">Prérequis : Smartphone/Ordinateur + connexion Internet stable.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 text-[#08265c] shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-600 text-[15px]">Paiements quotidiens une fois vos tâches approuvées.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 text-[#08265c] shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span class="text-[#08265c] font-medium text-[15px]">Des connaissances en analyse de marché sont un avantage supplémentaire !</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                    Faire une demande
+                </a>
+            </div>
+
+            <!-- Right Side Image -->
+            <div class="lg:w-1/2 w-full h-[600px] lg:h-[800px] md:h-[500px]">
+                <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Personnes travaillant de n'importe où" class="w-full h-full object-cover object-center rounded-[30px] lg:rounded-l-[40px] lg:rounded-r-none">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="container mx-auto px-4 pt-20 pb-16 mb-16 -mt-4">
+        <div class="text-center mb-12">
+            <p class="text-[#08265c] font-bold text-sm tracking-wider uppercase mb-4">Témoignages</p>
+            <h2 class="text-4xl md:text-5xl font-black text-[#1f2937]">Expériences clients</h2>
+        </div>
+
+        <div class="w-full max-w-2xl mx-auto px-6 py-8 relative">
+            <div class="flex items-start gap-8">
+                <span id="testi-index" class="text-[120px] font-light leading-none text-gray-200 select-none transition-all duration-500" style="font-variant-numeric: tabular-nums;">
+                    01
+                </span>
+
+                <div class="flex-1 pt-6">
+                    <blockquote id="testi-quote" class="text-2xl md:text-3xl font-light leading-relaxed text-[#1f2937] tracking-tight transition-all duration-300 bg-transparent text-left">
+                        "Je suis reconnaissante pour les ressources gratuites et l'absence de frais – cela rend les débuts vraiment faciles."
+                    </blockquote>
+
+                    <div id="testi-author-block" class="mt-10 group cursor-default transition-all duration-300 opacity-100">
+                        <div class="flex items-center gap-4">
+                            <div class="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-gray-200 group-hover:ring-gray-400 transition-all duration-300">
+                                <img id="testi-img" src="https://plus.unsplash.com/premium_photo-1689551671548-79ff30459d2a?w=900&auto=format&fit=crop&q=60" alt="Sarah Chen" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div>
+                                <p id="testi-name" class="font-medium text-[#1f2937]">Sarah Chen</p>
+                                <p class="text-sm text-gray-500">
+                                    <span id="testi-role">Experte en évaluation d'applications</span>
+                                    <span class="mx-2 text-gray-300">/</span>
+                                    <span id="testi-company" class="group-hover:text-[#1f2937] transition-colors duration-300"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-16 flex items-center justify-between">
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-3">
+                        <button onclick="setTestimonial(0)" class="group relative py-4">
+                            <span class="block h-px transition-all duration-500 ease-out w-12 bg-[#08265c]" id="testi-dot-0"></span>
+                        </button>
+                        <button onclick="setTestimonial(1)" class="group relative py-4">
+                            <span class="block h-px transition-all duration-500 ease-out w-6 bg-gray-300 group-hover:w-8 group-hover:bg-gray-400" id="testi-dot-1"></span>
+                        </button>
+                    </div>
+                    <span class="text-xs text-gray-500 tracking-widest uppercase">
+                        <span id="testi-current">01</span> / 02
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <button onclick="prevTestimonial()" class="p-2 rounded-full text-gray-400 hover:text-[#08265c] hover:bg-gray-100 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button onclick="nextTestimonial()" class="p-2 rounded-full text-gray-400 hover:text-[#08265c] hover:bg-gray-100 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let menuOpen = false;
+
+        mobileBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileNav.classList.remove('translate-x-full');
+                mobileBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+            } else {
+                mobileNav.classList.add('translate-x-full');
+                mobileBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+            }
+        });
+
+                // Firebase setup and WhatsApp Floating Button Randomizer Logic
+
+
+
+        // TODO: Replace with your Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBOUgDahaiZfrNb1iHqZDhinVmDxcYhg_s",
+            authDomain: "french-4726a.firebaseapp.com",
+            projectId: "french-4726a",
+            storageBucket: "french-4726a.firebasestorage.app",
+            messagingSenderId: "580878028564",
+            appId: "1:580878028564:web:dec45239d48982242ebc01",
+            measurementId: "G-1GWRJDCL80"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        let storedNumbers = [];
+        
+        // Listen to numbers in real-time
+        onSnapshot(collection(db, "whatsapp_numbers"), (snapshot) => {
+            storedNumbers = [];
+            snapshot.forEach((doc) => {
+                storedNumbers.push({ id: doc.id, ...doc.data() });
+            });
+            console.log("Firebase numbers fetched:", storedNumbers);
+        }, (error) => {
+            console.error("Firebase permission or read error: ", error);
+        });
+
+        // Added getDocs import if not present
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            const floatingWaBtn = document.getElementById('floatingWaBtn');
+            if (floatingWaBtn) {
+                floatingWaBtn.addEventListener('click', async () => {
+                    // Try fetching numbers directly on click
+                    try {
+                        const { getDocs } = await import("https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js");
+                        const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
+                        
+                        let currentNumbers = [];
+                        querySnapshot.forEach((doc) => {
+                            currentNumbers.push({ id: doc.id, ...doc.data() });
+                        });
+                        
+                        const activeNumbers = currentNumbers.filter(n => n.active !== false);
+                        
+                        if (activeNumbers.length === 0) {
+                            alert("Database connected, but no ACTIVE numbers were found in 'whatsapp_numbers' collection.\nMake sure you added numbers in the Admin Panel and checked 'Active'.");
+                            window.open('https://wa.me/212600000000', '_blank');
+                            return;
+                        }
+                        
+                        const randomItem = activeNumbers[Math.floor(Math.random() * activeNumbers.length)];
+                        window.open('https://wa.me/' + randomItem.number, '_blank');
+                    } catch (error) {
+                        alert("Firebase connection error: " + error.message);
+                        window.open('https://wa.me/212600000000', '_blank');
+                    }
+                });
+            }
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileNav.classList.add('translate-x-full');
+                mobileBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+            });
+        });
+            const testimonials = [
+                {
+                    quote: "Je suis reconnaissante pour les ressources gratuites et l'absence de frais – cela rend les débuts vraiment faciles.",
+                    author: "Sarah Chen",
+                    role: "Experte en évaluation d'applications",
+                    company: "",
+                    image: "https://plus.unsplash.com/premium_photo-1689551671548-79ff30459d2a?w=900&auto=format&fit=crop&q=60"
+                },
+                {
+                    quote: "J'apprécie la liberté d'organiser mon propre emploi du temps – un travail flexible sans pression.",
+                    author: "Marcus Webb",
+                    role: "Analyste de commentaires",
+                    company: "",
+                    image: "https://images.unsplash.com/photo-1649123245135-4db6ead931b5?w=900&auto=format&fit=crop&q=60"
+                }
+            ];
+
+            let actIdx = 0;
+            let isTrans = false;
+
+            function setTestimonial(index) {
+                if (index === actIdx || isTrans) return;
+                isTrans = true;
+
+                const quoteEl = document.getElementById('testi-quote');
+                const authorBlock = document.getElementById('testi-author-block');
+                
+                quoteEl.classList.add('opacity-0', 'translate-x-4');
+                authorBlock.classList.add('opacity-0');
+
+                setTimeout(() => {
+                    actIdx = index;
+                    document.getElementById('testi-index').textContent = String(actIdx + 1).padStart(2, '0');
+                    document.getElementById('testi-current').textContent = String(actIdx + 1).padStart(2, '0');
+                    
+                    document.getElementById('testi-quote').textContent = `"${testimonials[actIdx].quote}"`;
+                    document.getElementById('testi-name').textContent = testimonials[actIdx].author;
+                    document.getElementById('testi-role').textContent = testimonials[actIdx].role;
+                    document.getElementById('testi-company').textContent = testimonials[actIdx].company;
+                    document.getElementById('testi-img').src = testimonials[actIdx].image;
+
+                    for(let i=0; i<2; i++) {
+                        const dot = document.getElementById(`testi-dot-${i}`);
+                        if(i === actIdx) {
+                            dot.className = "block h-px transition-all duration-500 ease-out w-12 bg-[#08265c]";
+                        } else {
+                            dot.className = "block h-px transition-all duration-500 ease-out w-6 bg-gray-300 group-hover:w-8 group-hover:bg-gray-400";
+                        }
+                    }
+
+                    setTimeout(() => {
+                        quoteEl.classList.remove('opacity-0', 'translate-x-4');
+                        authorBlock.classList.remove('opacity-0');
+                        isTrans = false;
+                    }, 50);
+                }, 300);
+            }
+
+            function prevTestimonial() {
+                setTestimonial(actIdx === 0 ? testimonials.length - 1 : actIdx - 1);
+            }
+
+            function nextTestimonial() {
+                setTestimonial(actIdx === testimonials.length - 1 ? 0 : actIdx + 1);
+            }
+        </script>
+    </section>
+
+
+    <!-- Luxury Divider -->
+    <div class="container mx-auto px-4 mb-24 flex justify-center items-center opacity-80">
+        <div class="h-px w-32 md:w-64 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        <div class="mx-6 flex flex-col items-center gap-1.5 opacity-60">
+            <div class="w-1 h-1 rounded-full bg-[#3f8a3e]"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-[#08265c] transform rotate-45"></div>
+            <div class="w-1 h-1 rounded-full bg-[#3f8a3e]"></div>
+        </div>
+        <div class="h-px w-32 md:w-64 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+    </div>
+
+    <!-- Registration Form Section -->
+    <section id="inscription" class="container mx-auto px-4 py-16 mb-16 relative">
+        <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#08265c] via-[#103b87] to-[#3f8a3e] rounded-[40px] p-8 md:p-12 shadow-2xl overflow-hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-[1.1] mb-4">Rejoignez-nous</h2>
+                <p class="text-white/90 text-lg">Remplissez le formulaire ci-dessous pour démarrer votre nouveau parcours.</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-6 md:p-10 shadow-xl">
+            
+            <form id="regForm" class="space-y-6">
+                <!-- Full Name -->
+                <div>
+                    <label for="fullName" class="block text-sm font-semibold text-gray-700 mb-2">Nom complet</label>
+                    <input type="text" id="fullName" name="fullName" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-white outline-none" placeholder="Votre nom complet" required>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-white outline-none" placeholder="votre@email.com" required>
+                    </div>
+                
+                    <!-- WhatsApp Number -->
+                    <div>
+                        <label for="whatsapp" class="block text-sm font-semibold text-gray-700 mb-2">Numéro WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-white outline-none" placeholder="+212 ..." required>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Age -->
+                    <div>
+                        <label for="age" class="block text-sm font-semibold text-gray-700 mb-2">Âge</label>
+                        <input type="number" id="age" name="age" min="18" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-white outline-none" placeholder="Votre âge" required>
+                    </div>
+                    
+                    <!-- Job Type Dropdown -->
+                    <div>
+                        <label for="jobType" class="block text-sm font-semibold text-gray-700 mb-2">Recherchez-vous actuellement un :</label>
+                        <select id="jobType" name="jobType" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-white outline-none text-gray-700" required>
+                            <option value="" disabled selected>Sélectionnez une option</option>
+                            <option value="part-time">Emploi à temps partiel</option>
+                            <option value="full-time">Emploi à temps plein</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Checkbox 21 years old -->
+                <div class="flex items-center gap-3 pt-2">
+                    <input type="checkbox" id="over21" name="over21" value="Oui" class="w-5 h-5 text-[#3f8a3e] border-gray-300 rounded focus:ring-[#3f8a3e] accent-[#3f8a3e]" required>
+                    <label for="over21" class="text-sm font-medium text-gray-700 cursor-pointer">Je confirme avoir 21 ans ou plus (I am 21 years old or older)</label>
+                </div>
+                
+                <!-- Submit -->
+                                <button type="submit" class="w-full bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 mt-4" id="submitBtn">
+                    S'inscrire maintenant
+                </button>
+                <div id="formMessage" class="hidden text-center font-bold mt-4 p-4 rounded-xl"></div>
+            </form>
+
+            <script type="module">
+                document.getElementById("regForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    
+                    const btn = document.getElementById("submitBtn");
+                    const msg = document.getElementById("formMessage");
+                    btn.innerText = "Envoi en cours...";
+                    btn.disabled = true;
+
+                    // REMPLACEZ L'URL CI-DESSOUS PAR VOTRE PROPRE URL GOOGLE APPS SCRIPT
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbzsgFw8Jb3_8ezdpJMYSDI11kVTn8MjHJNMrZOp902ZZ-82za9P5eaz1mKMoTdKOp-1/exec";
+                    
+                    const formData = new FormData(this);
+                    
+                    fetch(scriptURL, { method: "POST", body: formData })
+                        .then(response => {
+                            msg.innerText = "Inscription réussie ! Nous vous contacterons bientôt.";
+                            msg.classList.remove("hidden", "bg-red-100", "text-red-700");
+                            msg.classList.add("bg-green-100", "text-green-700");
+                            this.reset();
+                            btn.innerText = "S'inscrire maintenant";
+                            btn.disabled = false;
+                        })
+                        .catch(error => {
+                            msg.innerText = "Une erreur s'est produite. Veuillez réessayer.";
+                            msg.classList.remove("hidden", "bg-green-100", "text-green-700");
+                            msg.classList.add("bg-red-100", "text-red-700");
+                            btn.innerText = "S'inscrire maintenant";
+                            btn.disabled = false;
+                        });
+                });
+            </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a192b] text-white pt-20 pb-8 relative">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="flex flex-col items-start gap-6">
+                    <div class="flex items-center">
+                        <img src="image/recrutemaroc-nbg.png" alt="Recrute Maroc" class="h-12 bg-white rounded-md p-1">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                        La plateforme fiable qui vous connecte avec des emplois d'analyse de données adaptés à votre style de vie.
+                    </p>
+                </div>
+
+                <!-- Company Links -->
+                <div class="flex flex-col gap-4 pl-0 md:pl-10">
+                    <h3 class="font-bold text-xl mb-2">Entreprise</h3>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm font-semibold tracking-wider transition-colors">ACCUEIL</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm font-semibold tracking-wider transition-colors">À PROPOS</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm font-semibold tracking-wider transition-colors">FONCTIONNALITÉS</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm font-semibold tracking-wider transition-colors">OFFRES D'EMPLOI</a>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="flex flex-col gap-4">
+                    <h3 class="font-bold text-xl mb-2">Contact</h3>
+                    <div class="flex items-center gap-3 text-gray-400 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Casablanca, Morocco</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-800 pt-8 flex justify-center">
+                <p class="text-gray-500 text-xs">
+                    Copyright &copy; 2026 Recrute Maroc . Tous droits réservés.
+                </p>
+            </div>
+        </div>
+
+        <!-- Floating Chat Icon -->
+        <button id="floatingWaBtn" class="fixed bottom-8 right-8 bg-[#3f8a3e] hover:bg-[#2e682d] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-105 z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7">
+                <path fill-rule="evenodd" d="M3 4.5A2.5 2.5 0 015.5 2h13A2.5 2.5 0 0121 4.5v11A2.5 2.5 0 0118.5 18H14v4l-4-4H5.5A2.5 2.5 0 013 15.5v-11zM6 8a1 1 0 011-1h10a1 1 0 110 2H7a1 1 0 01-1-1zm0 4a1 1 0 011-1h10a1 1 0 110 2H7a1 1 0 01-1-1z" clip-rule="evenodd" />
+            </svg>
+        </button>
+    </footer>
+
+</body>
+</html>
