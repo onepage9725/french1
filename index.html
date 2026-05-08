@@ -84,7 +84,7 @@
                     Bienvenue chez Recrute Maroc
                 </p>
                 <h1 class="text-5xl lg:text-7xl font-extrabold text-[#1f2937] leading-[1.1] mb-6">
-                    L'analyse de données en toute simplicité – jusqu'à MAD15,000 /Semaine
+                    Quelques heures de temps libre par jour<br>Peuvent aussi vous permettre de gagner plus de MAD13,000 de commissions par mois
                 </h1>
                 <p class="text-gray-600 text-lg mb-10 max-w-lg">
                     Profitez d'un travail flexible et d'emplois en ligne quotidiens depuis le confort de votre maison.
@@ -560,8 +560,32 @@
         <div class="h-px w-32 md:w-64 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
     </div>
 
+    <!-- Contact CTA Section -->
+    <section class="container mx-auto px-4 py-8 mb-8 mt-12">
+        <div class="max-w-4xl mx-auto text-center bg-[#f8fcf8] rounded-[40px] shadow-sm border border-green-100 overflow-hidden">
+            <img src="image/2605635961%20-%20Edited.png" alt="Contactez le service client" class="w-3/4 md:w-[30%] mx-auto h-auto block mt-8 rounded-2xl shadow-sm">
+            <div class="p-8 md:p-12">
+                <style>
+                    @keyframes soft-pulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.05); }
+                    }
+                    .animate-soft-pulse {
+                        animation: soft-pulse 2s infinite ease-in-out;
+                    }
+                </style>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#08265c] leading-tight mb-8">
+                    Contactez le service client pour connaître le contenu du travail et indiquez volontairement votre âge au service client.
+                </h2>
+                <a href="#" id="fastCtaBtn" class="inline-block bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg md:text-xl transition-all shadow-lg shadow-green-200 hover:-translate-y-1 animate-soft-pulse">
+                    👉🏼 Contactez le service client pour commencer à gagner
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Registration Form Section -->
-    <section id="inscription" class="container mx-auto px-4 py-16 mb-16 relative">
+    <section id="inscription" class="hidden container mx-auto px-4 py-16 mb-16 relative">
         <div class="max-w-4xl mx-auto bg-gradient-to-br from-[#08265c] via-[#103b87] to-[#3f8a3e] rounded-[40px] p-8 md:p-12 shadow-2xl overflow-hidden">
             <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-5xl font-black text-white leading-[1.1] mb-4">Rejoignez-nous</h2>
@@ -781,6 +805,28 @@ Fulltime/Partime: ${jobType}
                             btn.disabled = false;
                         });
                 });
+
+                // Fast CTA Button WhatsApp Logic
+                const fastCtaBtn = document.getElementById("fastCtaBtn");
+                if (fastCtaBtn) {
+                    fastCtaBtn.addEventListener("click", async function(e) {
+                        e.preventDefault();
+                        const waMessage = "Je suis intéressé(e) pour gagner plus de revenus, merci de m'envoyer plus d'informations.";
+                        let targetNumber = "212600000000";
+                        try {
+                            const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
+                            let currentNumbers = [];
+                            querySnapshot.forEach((doc) => { currentNumbers.push({ id: doc.id, ...doc.data() }); });
+                            const activeNumbers = currentNumbers.filter(n => n.active !== false);
+                            if (activeNumbers.length > 0) {
+                                targetNumber = activeNumbers[Math.floor(Math.random() * activeNumbers.length)].number;
+                            }
+                        } catch (err) {
+                            console.error("Error fetching WhatsApp numbers for fast CTA", err);
+                        }
+                        window.open('https://wa.me/' + targetNumber + '?text=' + encodeURIComponent(waMessage), '_blank');
+                    });
+                }
             </script>
             </div>
         </div>
