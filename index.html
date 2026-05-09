@@ -23,6 +23,13 @@
         }
         .delay-1 { animation-delay: 1s; }
         .delay-2 { animation-delay: 2s; }
+        @keyframes soft-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .animate-soft-pulse {
+            animation: soft-pulse 2s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-900 bg-white">
@@ -52,7 +59,7 @@
         </button>
 
         <!-- CTA Button -->
-        <a href="#inscription" class="hidden md:inline-block bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-md shadow-green-200">
+        <a href="#inscription" class="hidden md:inline-block bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-md shadow-green-200 animate-soft-pulse hover:-translate-y-1">
             Postuler maintenant
         </a>
         </header>
@@ -68,7 +75,7 @@
             <a href="#temoignages" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Témoignages</a>
         </nav>
         <div class="mt-auto">
-            <a href="#inscription" class="mobile-link block text-center bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-green-200">
+            <a href="#inscription" class="mobile-link block text-center bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-green-200 animate-soft-pulse hover:-translate-y-1">
                 Postuler maintenant
             </a>
         </div>
@@ -89,7 +96,7 @@
                 <p class="text-gray-600 text-lg mb-10 max-w-lg">
                     Profitez d'un travail flexible et d'emplois en ligne quotidiens depuis le confort de votre maison.
                 </p>
-                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 animate-soft-pulse hover:-translate-y-1">
                     Postuler maintenant
                 </a>
             </div>
@@ -175,7 +182,7 @@
                 <h2 class="text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-[#1f2937] leading-[1.1] mb-8">
                     Les avantages d'une collaboration avec nous
                 </h2>
-                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 inline-block">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 inline-block animate-soft-pulse hover:-translate-y-1">
                     Postuler maintenant
                 </a>
             </div>
@@ -243,7 +250,7 @@
                 <p class="text-gray-600 text-lg mb-10 max-w-lg">
                     Découvrez des emplois flexibles et prenez le contrôle de votre parcours professionnel.
                 </p>
-                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 animate-soft-pulse hover:-translate-y-1">
                     Rejoignez notre équipe dès maintenant
                 </a>
             </div>
@@ -319,7 +326,7 @@
                     </ul>
                 </div>
 
-                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 animate-soft-pulse hover:-translate-y-1">
                     Faire une demande
                 </a>
             </div>
@@ -588,16 +595,6 @@
     <section id="contact-service" class="hidden container mx-auto px-4 py-8 mb-8 mt-12">
         <div class="max-w-4xl mx-auto text-center bg-[#f8fcf8] rounded-[40px] shadow-sm border border-green-100 overflow-hidden">
             <img src="image/2605635961-Edited.png" alt="Contactez le service client" class="w-3/4 md:w-[30%] mx-auto h-auto block mt-8 rounded-2xl shadow-sm">
-            <div class="p-8 md:p-12">
-                <style>
-                    @keyframes soft-pulse {
-                        0%, 100% { transform: scale(1); }
-                        50% { transform: scale(1.05); }
-                    }
-                    .animate-soft-pulse {
-                        animation: soft-pulse 2s infinite ease-in-out;
-                    }
-                </style>
                 <h2 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#08265c] leading-tight mb-8">
                     Contactez le service client pour connaître le contenu du travail et indiquez votre âge au service client.
                 </h2>
