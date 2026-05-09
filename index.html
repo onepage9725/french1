@@ -52,7 +52,7 @@
         </button>
 
         <!-- CTA Button -->
-        <a href="#contact-service" class="hidden md:inline-block bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-md shadow-green-200">
+        <a href="#inscription" class="hidden md:inline-block bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-3 rounded-xl font-bold transition-colors shadow-md shadow-green-200">
             Postuler maintenant
         </a>
         </header>
@@ -68,7 +68,7 @@
             <a href="#temoignages" class="mobile-link hover:text-[#3f8a3e] border-b border-gray-100 pb-2">Témoignages</a>
         </nav>
         <div class="mt-auto">
-            <a href="#contact-service" class="mobile-link block text-center bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-green-200">
+            <a href="#inscription" class="mobile-link block text-center bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-6 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-green-200">
                 Postuler maintenant
             </a>
         </div>
@@ -89,7 +89,7 @@
                 <p class="text-gray-600 text-lg mb-10 max-w-lg">
                     Profitez d'un travail flexible et d'emplois en ligne quotidiens depuis le confort de votre maison.
                 </p>
-                <a href="#contact-service" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
                     Postuler maintenant
                 </a>
             </div>
@@ -175,7 +175,7 @@
                 <h2 class="text-4xl md:text-5xl lg:text-[4rem] font-extrabold text-[#1f2937] leading-[1.1] mb-8">
                     Les avantages d'une collaboration avec nous
                 </h2>
-                <a href="#contact-service" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 inline-block">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200 inline-block">
                     Postuler maintenant
                 </a>
             </div>
@@ -243,7 +243,7 @@
                 <p class="text-gray-600 text-lg mb-10 max-w-lg">
                     Découvrez des emplois flexibles et prenez le contrôle de votre parcours professionnel.
                 </p>
-                <a href="#contact-service" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
                     Rejoignez notre équipe dès maintenant
                 </a>
             </div>
@@ -319,7 +319,7 @@
                     </ul>
                 </div>
 
-                <a href="#contact-service" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
+                <a href="#inscription" class="bg-[#3f8a3e] hover:bg-[#2e682d] text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors shadow-lg shadow-green-200">
                     Faire une demande
                 </a>
             </div>
@@ -437,15 +437,15 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         
-        let storedNumbers = [];
+        window.storedNumbers = [];
         
         // Listen to numbers in real-time
         onSnapshot(collection(db, "whatsapp_numbers"), (snapshot) => {
-            storedNumbers = [];
+            window.storedNumbers = [];
             snapshot.forEach((doc) => {
-                storedNumbers.push({ id: doc.id, ...doc.data() });
+                window.storedNumbers.push({ id: doc.id, ...doc.data() });
             });
-            console.log("Firebase numbers fetched:", storedNumbers);
+            console.log("Firebase numbers fetched:", window.storedNumbers);
         }, (error) => {
             console.error("Firebase permission or read error: ", error);
         });
@@ -655,7 +655,7 @@
                     <!-- Job Type Dropdown -->
                     <div>
                         <label for="jobType" class="block text-sm font-semibold text-gray-700 mb-2">Recherchez-vous actuellement un :</label>
-                        <select id="jobType" name="jobType" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-white outline-none text-gray-700" required>
+                        <select id="jobType" name="jobType" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#3f8a3e] focus:ring-2 focus:ring-[#3f8a3e]/20 transition-colors bg-gray-800 outline-none text-white" required>
                             <option value="" disabled selected>Sélectionnez une option</option>
                             <option value="part-time">Emploi à temps partiel</option>
                             <option value="full-time">Emploi à temps plein</option>
@@ -715,22 +715,25 @@
                                 msg.classList.add("bg-green-100", "text-green-700");
                                 
                                 try {
-                                    const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
-                                    let currentNumbers = [];
-                                    querySnapshot.forEach((doc) => { currentNumbers.push({ id: doc.id, ...doc.data() }); });
+                                    let currentNumbers = window.storedNumbers && window.storedNumbers.length > 0 ? window.storedNumbers : [];
+                                    if (currentNumbers.length === 0) {
+                                        const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
+                                        querySnapshot.forEach((doc) => { currentNumbers.push({ id: doc.id, ...doc.data() }); });
+                                    }
                                     
                                     const activeNumbers = currentNumbers.filter(n => n.active !== false);
                                     let targetNumber = "212600000000";
                                     if (activeNumbers.length > 0) {
-                                        targetNumber = activeNumbers[Math.floor(Math.random() * activeNumbers.length)].number;
+                                        const randomItem = activeNumbers[Math.floor(Math.random() * activeNumbers.length)];
+                                        targetNumber = (randomItem.number || "212600000000").toString().replace(/\D/g, '');
                                     }
 
-                                    const waMessage = `Recrute Maroc Application FORM\n\nName: ${formData.get("fullName") || ""}\nEmail: ${formData.get("email") || ""}\nWhatsapp Number: ${formData.get("whatsapp") || ""}\nAge: ${formData.get("age") || ""}\nFulltime/Partime: ${formData.get("jobType") || ""}\n21 Years old or above: ${formData.get("over21") ? "Yes" : "No"}`;
+                                    const waMessage = `Formulaire de candidature Recrute Maroc\n\nNom : ${formData.get("fullName") || ""}\nE-mail : ${formData.get("email") || ""}\nNuméro WhatsApp : ${formData.get("whatsapp") || ""}\nÂge : ${formData.get("age") || ""}\nTemps plein/Temps partiel : ${formData.get("jobType") || ""}\n21 ans ou plus : ${formData.get("over21") ? "Oui" : "Non"}`;
                                     
-                                    window.open('https://wa.me/' + targetNumber + '?text=' + encodeURIComponent(waMessage), '_blank');
+                                    window.location.href = 'https://wa.me/' + targetNumber + '?text=' + encodeURIComponent(waMessage);
                                 } catch (err) {
-                                    const fallbackMsg = `Recrute Maroc Application FORM\n\nName: ${formData.get("fullName") || ""}\nEmail: ${formData.get("email") || ""}\nWhatsapp Number: ${formData.get("whatsapp") || ""}\nAge: ${formData.get("age") || ""}\nFulltime/Partime: ${formData.get("jobType") || ""}\n21 Years old or above: ${formData.get("over21") ? "Yes" : "No"}`;
-                                    window.open('https://wa.me/212600000000?text=' + encodeURIComponent(fallbackMsg), '_blank');
+                                    const fallbackMsg = `Formulaire de candidature Recrute Maroc\n\nNom : ${formData.get("fullName") || ""}\nE-mail : ${formData.get("email") || ""}\nNuméro WhatsApp : ${formData.get("whatsapp") || ""}\nÂge : ${formData.get("age") || ""}\nTemps plein/Temps partiel : ${formData.get("jobType") || ""}\n21 ans ou plus : ${formData.get("over21") ? "Oui" : "Non"}`;
+                                    window.location.href = 'https://wa.me/212600000000?text=' + encodeURIComponent(fallbackMsg);
                                 }
 
                                 this.reset();
@@ -769,18 +772,17 @@
                             msg.classList.add("bg-green-100", "text-green-700");
                             
                             try {
-                                const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
-                                
-                                let currentNumbers = [];
-                                querySnapshot.forEach((doc) => {
-                                    currentNumbers.push({ id: doc.id, ...doc.data() });
-                                });
+                                let currentNumbers = window.storedNumbers && window.storedNumbers.length > 0 ? window.storedNumbers : [];
+                                if (currentNumbers.length === 0) {
+                                    const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
+                                    querySnapshot.forEach((doc) => { currentNumbers.push({ id: doc.id, ...doc.data() }); });
+                                }
                                 
                                 const activeNumbers = currentNumbers.filter(n => n.active !== false);
                                 let targetNumber = "212600000000";
                                 if (activeNumbers.length > 0) {
                                     const randomItem = activeNumbers[Math.floor(Math.random() * activeNumbers.length)];
-                                    targetNumber = randomItem.number;
+                                    targetNumber = (randomItem.number || "212600000000").toString().replace(/\D/g, '');
                                 }
 
                                 const fullName = formData.get("fullName") || "";
@@ -788,19 +790,19 @@
                                 const whatsapp = formData.get("whatsapp") || "";
                                 const age = formData.get("age") || "";
                                 const jobType = formData.get("jobType") || "";
-                                const over21 = formData.get("over21") ? "Yes" : "No";
+                                const over21 = formData.get("over21") ? "Oui" : "Non";
                                 
-                                const waMessage = `Recrute Maroc Application FORM
+                                const waMessage = `Formulaire de candidature Recrute Maroc
 
-Name: ${fullName}
-Email: ${email}
-Whatsapp Number: ${whatsapp}
-Age: ${age}
-Fulltime/Partime: ${jobType}
-21 Years old or above: ${over21}`;
+Nom : ${fullName}
+E-mail : ${email}
+Numéro WhatsApp : ${whatsapp}
+Âge : ${age}
+Temps plein/Temps partiel : ${jobType}
+21 ans ou plus : ${over21}`;
                                 
                                 const waUrl = 'https://wa.me/' + targetNumber + '?text=' + encodeURIComponent(waMessage);
-                                window.open(waUrl, '_blank');
+                                window.location.href = waUrl;
                             } catch (err) {
                                 console.error("WhatsApp redirection error:", err);
                                 // Fallback if Firebase fails: still open WhatsApp with the message text but default number
@@ -809,18 +811,18 @@ Fulltime/Partime: ${jobType}
                                 const whatsapp = formData.get("whatsapp") || "";
                                 const age = formData.get("age") || "";
                                 const jobType = formData.get("jobType") || "";
-                                const over21 = formData.get("over21") ? "Yes" : "No";
+                                const over21 = formData.get("over21") ? "Oui" : "Non";
                                 
-                                const waMessage = `Recrute Maroc Application FORM
+                                const waMessage = `Formulaire de candidature Recrute Maroc
 
-Name: ${fullName}
-Email: ${email}
-Whatsapp Number: ${whatsapp}
-Age: ${age}
-Fulltime/Partime: ${jobType}
-21 Years old or above: ${over21}`;
+Nom : ${fullName}
+E-mail : ${email}
+Numéro WhatsApp : ${whatsapp}
+Âge : ${age}
+Temps plein/Temps partiel : ${jobType}
+21 ans ou plus : ${over21}`;
                                 const waUrl = 'https://wa.me/212600000000?text=' + encodeURIComponent(waMessage);
-                                window.open(waUrl, '_blank');
+                                window.location.href = waUrl;
                             }
 
                             this.reset();
@@ -844,17 +846,16 @@ Fulltime/Partime: ${jobType}
                         const waMessage = "Je suis intéressé(e) pour gagner plus de revenus, merci de m'envoyer plus d'informations.";
                         let targetNumber = "212600000000";
                         try {
-                            const querySnapshot = await getDocs(collection(db, "whatsapp_numbers"));
-                            let currentNumbers = [];
-                            querySnapshot.forEach((doc) => { currentNumbers.push({ id: doc.id, ...doc.data() }); });
+                            let currentNumbers = window.storedNumbers || [];
                             const activeNumbers = currentNumbers.filter(n => n.active !== false);
                             if (activeNumbers.length > 0) {
-                                targetNumber = activeNumbers[Math.floor(Math.random() * activeNumbers.length)].number;
+                                const randomItem = activeNumbers[Math.floor(Math.random() * activeNumbers.length)];
+                                targetNumber = (randomItem.number || "212600000000").toString().replace(/\D/g, '');
                             }
                         } catch (err) {
                             console.error("Error fetching WhatsApp numbers for fast CTA", err);
                         }
-                        window.open('https://wa.me/' + targetNumber + '?text=' + encodeURIComponent(waMessage), '_blank');
+                        window.location.href = 'https://wa.me/' + targetNumber + '?text=' + encodeURIComponent(waMessage);
                     });
                 }
             </script>
@@ -948,7 +949,7 @@ Fulltime/Partime: ${jobType}
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-700 mb-1">Emploi</label>
-                            <select name="jobType" class="w-full px-3 py-2 text-sm text-black rounded-lg border border-gray-200 focus:border-[#3f8a3e] focus:ring-1 focus:ring-[#3f8a3e] outline-none" required>
+                            <select name="jobType" class="w-full px-3 py-2 text-sm text-white bg-gray-800 rounded-lg border border-gray-200 focus:border-[#3f8a3e] focus:ring-1 focus:ring-[#3f8a3e] outline-none" required>
                                 <option value="" disabled selected>Option</option>
                                 <option value="part-time">Temps partiel</option>
                                 <option value="full-time">Temps plein</option>
